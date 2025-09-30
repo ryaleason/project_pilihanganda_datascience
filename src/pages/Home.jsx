@@ -339,11 +339,70 @@ const Home = () => {
 
             <button
               onClick={resetQuiz}
-              className="w-full bg-indigo-600 text-white py-3 rounded-lg font-semibold hover:bg-indigo-700 transition-colors flex items-center justify-center gap-2"
+              className="w-full bg-indigo-600 text-white py-3 rounded-lg font-semibold hover:bg-indigo-700 transition-colors flex items-center justify-center gap-2 mb-6"
             >
               <RotateCcw className="w-5 h-5" />
               Ulangi Kuis
             </button>
+          </div>
+
+          <div className="bg-white rounded-2xl shadow-xl p-8">
+            <h3 className="text-2xl font-bold text-gray-800 mb-6">Pembahasan Jawaban</h3>
+            <div className="space-y-6">
+              {questions.map((q, index) => {
+                const userAnswer = answers[index];
+                const isCorrect = userAnswer === q.correct;
+                
+                return (
+                  <div key={q.id} className={`border-2 rounded-lg p-4 ${isCorrect ? 'border-green-200 bg-green-50' : 'border-red-200 bg-red-50'}`}>
+                    <div className="flex items-start gap-3 mb-3">
+                      {isCorrect ? (
+                        <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
+                      ) : (
+                        <XCircle className="w-6 h-6 text-red-600 flex-shrink-0 mt-1" />
+                      )}
+                      <div className="flex-1">
+                        <p className="font-semibold text-gray-800 mb-2">
+                          {index + 1}. {q.question}
+                        </p>
+                        
+                        {userAnswer !== undefined ? (
+                          <div className="space-y-2">
+                            <div className={`p-2 rounded ${isCorrect ? 'bg-green-100' : 'bg-red-100'}`}>
+                              <span className="text-sm font-medium text-gray-700">Jawaban Anda: </span>
+                              <span className={`text-sm ${isCorrect ? 'text-green-800' : 'text-red-800'}`}>
+                                {q.options[userAnswer]}
+                              </span>
+                            </div>
+                            
+                            {!isCorrect && (
+                              <div className="p-2 rounded bg-green-100">
+                                <span className="text-sm font-medium text-gray-700">Jawaban Benar: </span>
+                                <span className="text-sm text-green-800">
+                                  {q.options[q.correct]}
+                                </span>
+                              </div>
+                            )}
+                          </div>
+                        ) : (
+                          <div className="space-y-2">
+                            <div className="p-2 rounded bg-gray-100">
+                              <span className="text-sm font-medium text-gray-700">Tidak dijawab</span>
+                            </div>
+                            <div className="p-2 rounded bg-green-100">
+                              <span className="text-sm font-medium text-gray-700">Jawaban Benar: </span>
+                              <span className="text-sm text-green-800">
+                                {q.options[q.correct]}
+                              </span>
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>

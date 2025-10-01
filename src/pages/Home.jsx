@@ -545,7 +545,7 @@ const Home = () => {
             </button>
             <button
               onClick={() => setQuestionLimit(60)}
-              className={`px-4 py-2 rounded-lg font-semibold border-2 transition-colors ${questionLimit === 50
+              className={`px-4 py-2 rounded-lg font-semibold border-2 transition-colors ${questionLimit === 60
                 ? "bg-indigo-600 text-white border-indigo-600"
                 : "border-gray-300 text-gray-700 hover:border-indigo-400"
                 }`}

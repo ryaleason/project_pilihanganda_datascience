@@ -35,8 +35,13 @@ const Home = () => {
     {
       id: 5,
       question: "Data Kontinu adalah?",
-      options: ["Data kategori", "Data terbatas jumlahnya", "Data dapat diukur dalam skala tak terhingga", "Data hanya berupa hitungan"],
-      correct: 2
+      options: [
+        "Data yang memiliki nilai terbatas dan tidak bisa dipecah lagi",
+        "Data yang dapat diukur dan memiliki nilai dalam rentang tertentu tanpa batasan pasti",
+        "Data yang hanya berupa angka bulat seperti jumlah orang atau jumlah mobil",
+        "Data yang berbentuk kategori seperti jenis kelamin atau warna"
+      ],
+      correct: 1
     },
     {
       id: 6,
@@ -112,7 +117,12 @@ const Home = () => {
     {
       id: 17,
       question: "Fundamental Data Science mencakup?",
-      options: ["Statistika, pemrograman, dan domain knowledge", "Hanya coding", "Hanya matematika", "Hanya teori"],
+      options: [
+        "Statistika, pemrograman, dan pemahaman bidang/domain knowledge",
+        "Hanya pemrograman karena semua bisa dilakukan dengan coding",
+        "Hanya matematika karena rumus adalah dasar utama data science",
+        "Hanya teori tanpa praktik, karena praktik tidak diperlukan"
+      ],
       correct: 0
     },
     {
@@ -184,13 +194,23 @@ const Home = () => {
     {
       id: 29,
       question: "Python dikenal karena?",
-      options: ["Sintaks mudah, banyak library data science", "Hanya untuk web", "Sulit dipelajari", "Tidak mendukung machine learning"],
+      options: [
+        "Sintaks yang sederhana, komunitas luas, dan banyak library untuk data science",
+        "Hanya digunakan untuk membangun website dengan framework seperti Django",
+        "Bahasanya rumit dan sulit dipelajari untuk pemula",
+        "Kurang cocok untuk machine learning karena tidak ada library pendukung"
+      ],
       correct: 0
     },
     {
       id: 30,
       question: "R banyak digunakan untuk?",
-      options: ["Membuat Game", "Analisis statistik dan visualisasi data", "Mendesain grafis", "Mengedit video"],
+      options: [
+        "Membuat aplikasi grafis interaktif seperti game",
+        "Analisis statistik, eksplorasi data, dan visualisasi hasil",
+        "Desain visual seperti poster dan ilustrasi",
+        "Pengeditan multimedia seperti video dan audio"
+      ],
       correct: 1
     },
     {

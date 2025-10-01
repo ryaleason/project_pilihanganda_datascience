@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Clock, CheckCircle, XCircle, Award, RotateCcw , Instagram, GithubIcon, Github, Globe} from 'lucide-react';
+import { Clock, CheckCircle, XCircle, Award, RotateCcw, Instagram, GithubIcon, Github, Globe } from 'lucide-react';
 import Swal from 'sweetalert2';
 
 const shuffleArray = (array) => {
@@ -187,6 +187,126 @@ const Home = () => {
       question: "R banyak digunakan untuk?",
       options: ["Membuat Game", "Analisis statistik dan visualisasi data", "Mendesain grafis", "Mengedit video"],
       correct: 1
+    },
+    {
+      id: 31,
+      question: "Scope Machine Learning meliputi ...",
+      options: ["Prediksi", "Klasifikasi", "Clustering", "Semua benar"],
+      correct: 3
+    },
+    {
+      id: 32,
+      question: "Salah satu faktor popularitas Machine Learning adalah ...",
+      options: ["Mahal", "Kompleks", "Banyak dataset tersedia", "Tidak berguna"],
+      correct: 2
+    },
+    {
+      id: 33,
+      question: "Tipe Machine Learning yang menggunakan label disebut ...",
+      options: ["Supervised Learning", "Unsupervised Learning", "Reinforcement Learning", "Deep Learning"],
+      correct: 0
+    },
+    {
+      id: 34,
+      question: "Clustering termasuk ke dalam ...",
+      options: ["Supervised Learning", "Unsupervised Learning", "Reinforcement Learning", "Transfer Learning"],
+      correct: 1
+    },
+    {
+      id: 35,
+      question: "Reward dan punishment digunakan pada ...",
+      options: ["Supervised Learning", "Unsupervised Learning", "Reinforcement Learning", "Deep Learning"],
+      correct: 2
+    },
+    {
+      id: 36,
+      question: "Jaringan syaraf tiruan mendasari ...",
+      options: ["Algoritma tradisional", "Deep Learning", "Database", "Statistik Deskriptif"],
+      correct: 1
+    },
+    {
+      id: 37,
+      question: "Decision Tree adalah contoh ...",
+      options: ["Deep Learning", "Algoritma Tradisional", "Clustering", "Big Data"],
+      correct: 1
+    },
+    {
+      id: 38,
+      question: "Convolutional Neural Network (CNN) biasa dipakai untuk ...",
+      options: ["Pengolahan teks", "Analisis gambar", "Clustering data", "Regresi sederhana"],
+      correct: 1
+    },
+    {
+      id: 39,
+      question: "Algoritma K-Means digunakan untuk ...",
+      options: ["Regresi", "Klasifikasi", "Clustering", "Prediksi deret waktu"],
+      correct: 2
+    },
+    {
+      id: 40,
+      question: "Linear Regression digunakan untuk ...",
+      options: ["Memprediksi nilai numerik", "Mengelompokkan data", "Mengurangi dimensi", "Menganalisis gambar"],
+      correct: 0
+    },
+    {
+      id: 41,
+      question: "SVM (Support Vector Machine) digunakan untuk ...",
+      options: ["Klasifikasi", "Clustering", "Visualisasi", "Pengukuran data"],
+      correct: 0
+    },
+    {
+      id: 42,
+      question: "Random Forest adalah pengembangan dari ...",
+      options: ["Decision Tree", "Linear Regression", "Naive Bayes", "KNN"],
+      correct: 0
+    },
+    {
+      id: 43,
+      question: "TensorFlow adalah ...",
+      options: ["Framework Machine Learning", "Bahasa Pemrograman", "Database", "Alat Visualisasi"],
+      correct: 0
+    },
+    {
+      id: 44,
+      question: "Keras biasanya digunakan untuk ...",
+      options: ["Deep Learning", "Big Data", "Data Cleaning", "Data Nominal"],
+      correct: 0
+    },
+    {
+      id: 45,
+      question: "Pandas di Python digunakan untuk ...",
+      options: ["Visualisasi data", "Manipulasi data", "Machine Learning", "Deep Learning"],
+      correct: 1
+    },
+    {
+      id: 46,
+      question: "Matplotlib digunakan untuk ...",
+      options: ["Pengolahan data", "Visualisasi data", "Machine Learning", "Database"],
+      correct: 1
+    },
+    {
+      id: 47,
+      question: "Scikit-learn populer untuk ...",
+      options: ["Deep Learning", "Machine Learning tradisional", "Data Visualization", "Big Data"],
+      correct: 1
+    },
+    {
+      id: 48,
+      question: "SQL biasanya digunakan untuk ...",
+      options: ["Mengelola database", "Melatih model", "Visualisasi data", "Data cleaning"],
+      correct: 0
+    },
+    {
+      id: 49,
+      question: "Cloud Computing bermanfaat untuk ...",
+      options: ["Menyimpan dan mengolah data", "Menentukan data nominal", "Menghitung aljabar", "Menjalankan statistik manual"],
+      correct: 0
+    },
+    {
+      id: 50,
+      question: "Data Science berdampak pada ...",
+      options: ["Kesehatan", "Bisnis", "Pendidikan", "Semua benar"],
+      correct: 3
     }
   ];
 
@@ -195,8 +315,9 @@ const Home = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState({});
   const [isFinished, setIsFinished] = useState(false);
-  const [timeLeft, setTimeLeft] = useState(1800);
+  const [timeLeft, setTimeLeft] = useState(3600);
   const [isStarted, setIsStarted] = useState(false);
+  const [questionLimit, setQuestionLimit] = useState(null);
 
   useEffect(() => {
     if (isStarted && !isFinished && timeLeft > 0) {
@@ -257,6 +378,17 @@ const Home = () => {
     setTimeLeft(1800);
     setIsStarted(false);
     setQuestions(shuffleArray(originalQuestions));
+    setQuestions([]);
+  };
+
+   const startQuiz = () => {
+    if (!questionLimit) {
+      Swal.fire("Pilih jumlah soal dulu!", "", "warning");
+      return;
+    }
+    const shuffled = shuffleArray(originalQuestions).slice(0, questionLimit);
+    setQuestions(shuffled);
+    setIsStarted(true);
   };
 
   if (!isStarted) {
@@ -268,47 +400,72 @@ const Home = () => {
       confirmButtonColor: '#3085d6',
     })
     return (
-      <div className="min-h-screen flex-col  bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center p-4">
+      <div className="min-h-screen flex-col bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center p-4">
         <div className="bg-white rounded-2xl shadow-xl p-8 max-w-md w-full text-center">
           <div className="mb-6">
             <Award className="w-20 h-20 text-indigo-600 mx-auto mb-4" />
             <h1 className="text-3xl font-bold text-gray-800 mb-2">
               Kuis Latihan Data Science
             </h1>
-            <p className="text-gray-600">Plihan Ganda</p>
+            <p className="text-gray-600">Pilihan Ganda</p>
+          </div>
+
+          <div className="flex gap-4 mb-6 justify-center">
+            <button
+              onClick={() => setQuestionLimit(30)}
+              className={`px-4 py-2 rounded-lg font-semibold border-2 transition-colors ${
+                questionLimit === 30
+                  ? "bg-indigo-600 text-white border-indigo-600"
+                  : "border-gray-300 text-gray-700 hover:border-indigo-400"
+              }`}
+            >
+              30 Soal
+            </button>
+            <button
+              onClick={() => setQuestionLimit(50)}
+              className={`px-4 py-2 rounded-lg font-semibold border-2 transition-colors ${
+                questionLimit === 50
+                  ? "bg-indigo-600 text-white border-indigo-600"
+                  : "border-gray-300 text-gray-700 hover:border-indigo-400"
+              }`}
+            >
+              50 Soal
+            </button>
           </div>
 
           <div className="bg-indigo-50 rounded-lg p-4 mb-6 space-y-2">
             <div className="flex items-center justify-between">
               <span className="text-gray-700">Jumlah Soal:</span>
               <span className="font-bold text-indigo-600">
-                {questions.length} Soal
+                {questionLimit ? questionLimit : "-"} Soal
               </span>
             </div>
             <div className="flex items-center justify-between">
               <span className="text-gray-700">Waktu:</span>
-              <span className="font-bold text-indigo-600">30 Menit</span>
+              <span className="font-bold text-indigo-600">60 Menit</span>
             </div>
           </div>
 
           <button
-            onClick={() => setIsStarted(true)}
+            onClick={startQuiz}
             className="w-full bg-indigo-600 text-white py-3 rounded-lg font-semibold hover:bg-indigo-700 transition-colors"
           >
             Mulai Kuis
           </button>
-          <h1 className='text-sm text-gray-600 mt-4'>Bila ada kesalahan silahkan dm saya</h1>
+          <h1 className="text-sm text-gray-600 mt-4">
+            Bila ada kesalahan silahkan DM saya
+          </h1>
         </div>
 
         <div className="grid grid-cols-3 grid-rows-1 mt-4 gap-4 ">
-          <div className='bg-white py-1 px-3 shadow-lg cursor-pointer rounded-lg w-10 h-10 flex justify-center items-center'>
-            <a href='https://www.instagram.com/ryaleason_/'><Instagram /></a>
+          <div className="bg-white py-1 px-3 shadow-lg cursor-pointer rounded-lg w-10 h-10 flex justify-center items-center">
+            <a href="https://www.instagram.com/ryaleason_/"><Instagram /></a>
           </div>
-          <div className='bg-white py-1 px-3 shadow-lg cursor-pointer rounded-lg w-10 h-10 flex justify-center items-center'>
-            <a href='https://github.com/ryaleason'><Github/></a>
+          <div className="bg-white py-1 px-3 shadow-lg cursor-pointer rounded-lg w-10 h-10 flex justify-center items-center">
+            <a href="https://github.com/ryaleason"><Github /></a>
           </div>
-          <div className='bg-white py-1 px-3 cursor-pointer shadow-lg rounded-lg w-10 h-10 flex justify-center items-center'>
-            <a href='https://ryaleason.github.io/portofolio/'><Globe /></a>
+          <div className="bg-white py-1 px-3 cursor-pointer shadow-lg rounded-lg w-10 h-10 flex justify-center items-center">
+            <a href="https://ryaleason.github.io/portofolio/"><Globe /></a>
           </div>
         </div>
       </div>
@@ -360,7 +517,7 @@ const Home = () => {
               {questions.map((q, index) => {
                 const userAnswer = answers[index];
                 const isCorrect = userAnswer === q.correct;
-                
+
                 return (
                   <div key={q.id} className={`border-2 rounded-lg p-4 ${isCorrect ? 'border-green-200 bg-green-50' : 'border-red-200 bg-red-50'}`}>
                     <div className="flex items-start gap-3 mb-3">
@@ -373,7 +530,7 @@ const Home = () => {
                         <p className="font-semibold text-gray-800 mb-2">
                           {index + 1}. {q.question}
                         </p>
-                        
+
                         {userAnswer !== undefined ? (
                           <div className="space-y-2">
                             <div className={`p-2 rounded ${isCorrect ? 'bg-green-100' : 'bg-red-100'}`}>
@@ -382,7 +539,7 @@ const Home = () => {
                                 {q.options[userAnswer]}
                               </span>
                             </div>
-                            
+
                             {!isCorrect && (
                               <div className="p-2 rounded bg-green-100">
                                 <span className="text-sm font-medium text-gray-700">Jawaban Benar: </span>
@@ -453,15 +610,15 @@ const Home = () => {
                 key={index}
                 onClick={() => handleAnswer(index)}
                 className={`w-full text-left p-4 rounded-lg border-2 transition-all ${answers[currentQuestion] === index
-                    ? "border-indigo-600 bg-indigo-50 text-indigo-900"
-                    : "border-gray-200 hover:border-indigo-300 bg-white"
+                  ? "border-indigo-600 bg-indigo-50 text-indigo-900"
+                  : "border-gray-200 hover:border-indigo-300 bg-white"
                   }`}
               >
                 <div className="flex items-center gap-3">
                   <div
                     className={`w-6 h-6 rounded-full border-2 flex items-center justify-center ${answers[currentQuestion] === index
-                        ? "border-indigo-600 bg-indigo-600"
-                        : "border-gray-300"
+                      ? "border-indigo-600 bg-indigo-600"
+                      : "border-gray-300"
                       }`}
                   >
                     {answers[currentQuestion] === index && (

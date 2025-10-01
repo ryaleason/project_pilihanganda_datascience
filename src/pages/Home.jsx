@@ -273,10 +273,15 @@ const Home = () => {
       correct: 0
     },
     {
-      id: 45,
-      question: "Pandas di Python digunakan untuk ...",
-      options: ["Visualisasi data", "Manipulasi data", "Machine Learning", "Deep Learning"],
-      correct: 1
+      id: 44,
+      question: "Apa komponen utama dalam Deep Learning?",
+      options: [
+        "Tabel Excel",
+        "Diagram alir",
+        "Jaringan saraf tiruan (Neural Network)",
+        "Algoritma Sorting"
+      ],
+      correct: 2
     },
     {
       id: 46,
@@ -381,7 +386,7 @@ const Home = () => {
     setQuestions([]);
   };
 
-   const startQuiz = () => {
+  const startQuiz = () => {
     if (!questionLimit) {
       Swal.fire("Pilih jumlah soal dulu!", "", "warning");
       return;
@@ -413,21 +418,19 @@ const Home = () => {
           <div className="flex gap-4 mb-6 justify-center">
             <button
               onClick={() => setQuestionLimit(30)}
-              className={`px-4 py-2 rounded-lg font-semibold border-2 transition-colors ${
-                questionLimit === 30
+              className={`px-4 py-2 rounded-lg font-semibold border-2 transition-colors ${questionLimit === 30
                   ? "bg-indigo-600 text-white border-indigo-600"
                   : "border-gray-300 text-gray-700 hover:border-indigo-400"
-              }`}
+                }`}
             >
               30 Soal
             </button>
             <button
               onClick={() => setQuestionLimit(50)}
-              className={`px-4 py-2 rounded-lg font-semibold border-2 transition-colors ${
-                questionLimit === 50
+              className={`px-4 py-2 rounded-lg font-semibold border-2 transition-colors ${questionLimit === 50
                   ? "bg-indigo-600 text-white border-indigo-600"
                   : "border-gray-300 text-gray-700 hover:border-indigo-400"
-              }`}
+                }`}
             >
               50 Soal
             </button>

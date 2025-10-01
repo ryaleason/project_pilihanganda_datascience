@@ -312,6 +312,115 @@ const Home = () => {
       question: "Data Science berdampak pada ...",
       options: ["Kesehatan", "Bisnis", "Pendidikan", "Semua benar"],
       correct: 3
+    },
+    {
+      id: 51,
+      question: "Apa perbedaan utama antara Machine Learning dan Deep Learning?",
+      options: [
+        "Deep Learning menggunakan jaringan saraf tiruan berlapis",
+        "Machine Learning selalu lebih akurat",
+        "Machine Learning hanya dipakai untuk gambar",
+        "Deep Learning tidak butuh data besar"
+      ],
+      correct: 0
+    },
+    {
+      id: 52,
+      question: "Mengapa Deep Learning membutuhkan data yang banyak?",
+      options: [
+        "Supaya database tidak kosong",
+        "Agar data tidak hilang",,
+        "Untuk melatih parameter model yang kompleks",
+      ],
+      correct: 3
+    },
+    {
+      id: 53,
+      question: "Lapisan tersembunyi (hidden layer) pada neural network berfungsi untuk ...",
+      options: [
+        "Menambah data baru",
+        "Mengubah input menjadi representasi lebih kompleks",
+        "Menyimpan file model",
+        "Menghapus data duplikat"
+      ],
+      correct: 1
+    },
+    {
+      id: 54,
+      question: "Apa fungsi aktivasi ReLU dalam neural network?",
+      options: [
+        "Membatasi output hanya 0 atau 1",
+        "Mengubah data menjadi tabel",
+        "Meningkatkan kecepatan komputasi dan mengatasi vanishing gradient",
+        "Menghapus data kosong"
+      ],
+      correct: 2
+    },
+    {
+      id: 55,
+      question: "Convolutional Neural Network (CNN) biasanya digunakan untuk ...",
+      options: [
+        "Analisis teks",
+        "Pemrosesan gambar",
+        "Membuat grafik",
+        "Analisis data keuangan"
+      ],
+      correct: 1
+    },
+    {
+      id: 56,
+      question: "Recurrent Neural Network (RNN) cocok digunakan untuk ...",
+      options: [
+        "Data gambar",
+        "Data kategori sederhana",
+        "Data tabel kecil",
+        "Data urutan seperti teks atau suara",
+      ],
+      correct: 3
+    },
+    {
+      id: 57,
+      question: "Overfitting pada model machine learning berarti ...",
+      options: [
+        "Model bekerja sangat baik di data latih tetapi buruk di data baru",
+        "Model tidak bisa membaca data",
+        "Model selalu benar",
+        "Model gagal dilatih"
+      ],
+      correct: 0
+    },
+    {
+      id: 58,
+      question: "Dropout dalam neural network digunakan untuk ...",
+      options: [
+        "Mempercepat loading data",
+        "Mengurangi overfitting dengan menonaktifkan sebagian neuron",
+        "Membuat data hilang",
+        "Menyimpan model"
+      ],
+      correct: 1
+    },
+    {
+      id: 59,
+      question: "Apa keuntungan GPU dalam melatih Deep Learning?",
+      options: [
+        "Menyimpan lebih banyak data",
+        "Mempercepat komputasi paralel untuk matriks besar",
+        "Mengurangi ukuran file",
+        "Menghapus noise data"
+      ],
+      correct: 1
+    },
+    {
+      id: 60,
+      question: "Transfer Learning dalam Deep Learning adalah ...",
+      options: [
+        "Menggunakan model yang sudah dilatih untuk tugas baru",
+        "Memindahkan data antar komputer",
+        "Menghapus model lama",
+        "Menyalin data training"
+      ],
+      correct: 0
     }
   ];
 
@@ -419,8 +528,8 @@ const Home = () => {
             <button
               onClick={() => setQuestionLimit(30)}
               className={`px-4 py-2 rounded-lg font-semibold border-2 transition-colors ${questionLimit === 30
-                  ? "bg-indigo-600 text-white border-indigo-600"
-                  : "border-gray-300 text-gray-700 hover:border-indigo-400"
+                ? "bg-indigo-600 text-white border-indigo-600"
+                : "border-gray-300 text-gray-700 hover:border-indigo-400"
                 }`}
             >
               30 Soal
@@ -428,11 +537,20 @@ const Home = () => {
             <button
               onClick={() => setQuestionLimit(50)}
               className={`px-4 py-2 rounded-lg font-semibold border-2 transition-colors ${questionLimit === 50
-                  ? "bg-indigo-600 text-white border-indigo-600"
-                  : "border-gray-300 text-gray-700 hover:border-indigo-400"
+                ? "bg-indigo-600 text-white border-indigo-600"
+                : "border-gray-300 text-gray-700 hover:border-indigo-400"
                 }`}
             >
               50 Soal
+            </button>
+            <button
+              onClick={() => setQuestionLimit(60)}
+              className={`px-4 py-2 rounded-lg font-semibold border-2 transition-colors ${questionLimit === 50
+                ? "bg-indigo-600 text-white border-indigo-600"
+                : "border-gray-300 text-gray-700 hover:border-indigo-400"
+                }`}
+            >
+              60 Soal
             </button>
           </div>
 

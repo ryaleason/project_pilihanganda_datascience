@@ -499,8 +499,13 @@ const Home = () => {
     {
       id: 69,
       question: "Unsupervised Learning digunakan untuk?",
-      options: ["Clustering dan menemukan pola tersembunyi", "Prediksi nilai target", "Menjalankan hardware", "Menulis program web"],
-      correct: 0
+      options: [
+        "Prediksi nilai target",
+        "Menjalankan hardware",
+        "Clustering dan menemukan pola tersembunyi",
+        "Menulis program web"
+      ],
+      correct: 2
     },
     {
       id: 70,
@@ -523,170 +528,170 @@ const Home = () => {
     {
       id: 73,
       question: "Overfitting terjadi ketika?",
-      options: ["Model hanya hafal data training", "Model bekerja baik pada data baru", "Data hilang", "Model tidak bisa dilatih"],
-      correct: 0
+      options: ["Model bekerja baik pada data baru", "Model terlalu sederhana", "Data training tidak cukup", "Model hanya hafal data training"],
+      correct: 3
     },
     {
       id: 74,
       question: "Cross-validation digunakan untuk?",
-      options: ["Menguji performa model dengan data yang berbeda", "Menghapus outlier", "Mengedit database", "Membuat grafik"],
-      correct: 0
+      options: ["Membuat grafik distribusi", "Menguji performa model dengan data yang berbeda", "Menghapus outlier otomatis", "Mengedit struktur database"],
+      correct: 1
     },
     {
       id: 75,
       question: "Mean, Median, dan Mode termasuk?",
-      options: ["Ukuran pemusatan data", "Jenis distribusi data", "Jenis algoritma ML", "Metode data cleaning"],
-      correct: 0
+      options: ["Jenis algoritma machine learning", "Ukuran pemusatan data", "Metode pembersihan data", "Jenis distribusi probabilitas"],
+      correct: 1
     },
     {
       id: 76,
       question: "Standard Deviation digunakan untuk?",
-      options: ["Mengukur penyebaran data", "Menghitung rata-rata", "Mencari jumlah data", "Menentukan label"],
-      correct: 0
+      options: ["Menentukan label klasifikasi", "Menghitung nilai rata-rata", "Mengukur penyebaran data", "Mencari jumlah total data"],
+      correct: 2
     },
     {
       id: 77,
       question: "Outlier adalah?",
-      options: ["Data yang jauh berbeda dari mayoritas", "Data yang hilang", "Data yang error input", "Data duplikat"],
-      correct: 0
+      options: ["Data duplikat yang terdeteksi", "Data yang hilang dari dataset", "Data yang jauh berbeda dari mayoritas", "Data dengan format error"],
+      correct: 2
     },
     {
       id: 78,
       question: "Boxplot biasanya digunakan untuk?",
-      options: ["Melihat distribusi dan outlier", "Membuat database", "Prediksi harga", "Membersihkan data"],
-      correct: 0
+      options: ["Membersihkan data otomatis", "Melihat distribusi dan outlier", "Membuat relasi database", "Prediksi nilai masa depan"],
+      correct: 1
     },
     {
       id: 79,
       question: "Heatmap digunakan untuk?",
-      options: ["Visualisasi korelasi antar variabel", "Membuat game", "Menjalankan server", "Mengelola file"],
-      correct: 0
+      options: ["Menjalankan server aplikasi", "Mengelola sistem file", "Visualisasi korelasi antar variabel", "Membuat game simulasi"],
+      correct: 2
     },
     {
       id: 80,
       question: "Correlation menunjukkan?",
-      options: ["Hubungan antar variabel", "Jumlah data", "Jenis data", "Error model"],
-      correct: 0
+      options: ["Error rate model", "Hubungan antar variabel", "Jumlah total data", "Tipe data kategorikal"],
+      correct: 1
     },
     {
       id: 81,
       question: "Logistic Regression digunakan untuk?",
-      options: ["Klasifikasi biner", "Clustering", "Prediksi numerik", "Sorting data"],
+      options: ["Klasifikasi biner", "Clustering data tanpa label", "Prediksi nilai numerik kontinu", "Sorting dataset besar"],
       correct: 0
     },
     {
       id: 82,
       question: "Linear Regression digunakan untuk?",
-      options: ["Prediksi nilai kontinu", "Klasifikasi", "Clustering", "Data cleaning"],
+      options: ["Prediksi nilai kontinu", "Klasifikasi multi-class", "Clustering hierarki", "Pembersihan data otomatis"],
       correct: 0
     },
     {
       id: 83,
       question: "KNN (K-Nearest Neighbors) termasuk?",
-      options: ["Algoritma supervised learning", "Algoritma unsupervised learning", "Metode data cleaning", "Metode evaluasi"],
+      options: ["Algoritma supervised learning", "Algoritma unsupervised learning", "Metode preprocessing data", "Metode evaluasi model"],
       correct: 0
     },
     {
       id: 84,
       question: "Decision Tree digunakan untuk?",
-      options: ["Klasifikasi dan regresi", "Cleaning data", "Membuat grafik", "Menjalankan OS"],
-      correct: 0
+      options: ["Menjalankan sistem operasi", "Membuat visualisasi grafik", "Cleaning data duplikat", "Klasifikasi dan regresi"],
+      correct: 3
     },
     {
       id: 85,
       question: "Naive Bayes sering digunakan untuk?",
-      options: ["Klasifikasi berbasis probabilitas", "Clustering tanpa label", "Prediksi data time series", "Menghapus data duplikat"],
-      correct: 0
+      options: ["Menghapus data yang hilang", "Prediksi time series kompleks", "Klasifikasi berbasis probabilitas", "Clustering tanpa label"],
+      correct: 2
     },
     {
       id: 86,
       question: "Clustering dengan K-Means berarti?",
-      options: ["Mengelompokkan data berdasarkan kemiripan", "Memprediksi nilai kontinu", "Membersihkan data", "Membuat database"],
-      correct: 0
+      options: ["Membuat database relasional", "Mengelompokkan data berdasarkan kemiripan", "Memprediksi nilai masa depan", "Membersihkan data kotor"],
+      correct: 1
     },
     {
       id: 87,
       question: "Deep Learning umumnya menggunakan?",
-      options: ["Artificial Neural Network", "Decision Tree", "Naive Bayes", "K-Means"],
-      correct: 0
+      options: ["Decision Tree ensemble", "Naive Bayes probabilistik", "Artificial Neural Network", "K-Means clustering"],
+      correct: 2
     },
     {
       id: 88,
       question: "TensorFlow dan PyTorch adalah?",
-      options: ["Framework deep learning", "Bahasa pemrograman", "Database", "Sistem operasi"],
-      correct: 0
+      options: ["Sistem operasi khusus AI", "Bahasa pemrograman baru", "Framework deep learning", "Database management system"],
+      correct: 2
     },
     {
       id: 89,
       question: "Epoch dalam training model berarti?",
-      options: ["Satu kali seluruh data training diproses", "Jumlah node dalam jaringan", "Ukuran batch", "Jumlah layer"],
-      correct: 0
+      options: ["Jumlah layer dalam network", "Satu kali seluruh data training diproses", "Ukuran batch yang digunakan", "Jumlah neuron per layer"],
+      correct: 1
     },
     {
       id: 90,
       question: "Batch Size mengacu pada?",
-      options: ["Jumlah sampel diproses sekali forward-backward pass", "Jumlah total dataset", "Jumlah epoch", "Jumlah layer model"],
-      correct: 0
+      options: ["Jumlah total dataset lengkap", "Jumlah epoch training", "Jumlah sampel diproses sekali forward-backward pass", "Jumlah layer dalam model"],
+      correct: 2
     },
     {
       id: 91,
       question: "Loss Function digunakan untuk?",
-      options: ["Mengukur seberapa baik model memprediksi", "Menghapus data hilang", "Mengatur ukuran dataset", "Membuat visualisasi"],
-      correct: 0
+      options: ["Mengatur ukuran dataset", "Menghapus missing values", "Membuat visualisasi interaktif", "Mengukur seberapa baik model memprediksi"],
+      correct: 3
     },
     {
       id: 92,
       question: "Optimizer dalam deep learning berfungsi?",
-      options: ["Memperbarui bobot agar loss berkurang", "Membersihkan data", "Mengatur ukuran batch", "Menghapus outlier"],
-      correct: 0
+      options: ["Membersihkan data kotor", "Memperbarui bobot agar loss berkurang", "Mengatur batch size otomatis", "Menghapus outlier ekstrem"],
+      correct: 1
     },
     {
       id: 93,
       question: "Gradient Descent digunakan untuk?",
-      options: ["Mencari nilai parameter optimal", "Mengurutkan data", "Membersihkan dataset", "Membuat database"],
-      correct: 0
+      options: ["Mengurutkan data training", "Membersihkan dataset", "Membuat struktur database", "Mencari nilai parameter optimal"],
+      correct: 3
     },
     {
       id: 94,
       question: "Underfitting terjadi ketika?",
-      options: ["Model terlalu sederhana sehingga gagal belajar", "Model hafal data training", "Data hilang", "Dataset salah format"],
+      options: ["Model terlalu sederhana sehingga gagal belajar", "Model hafal semua data training", "Data mengalami missing values", "Dataset memiliki format salah"],
       correct: 0
     },
     {
       id: 95,
       question: "Regularization digunakan untuk?",
-      options: ["Mengurangi overfitting", "Meningkatkan jumlah data", "Menghapus duplikat", "Membuat database"],
+      options: ["Mengurangi overfitting", "Meningkatkan jumlah data", "Menghapus data duplikat", "Membuat struktur database"],
       correct: 0
     },
     {
       id: 96,
       question: "One-Hot Encoding digunakan untuk?",
-      options: ["Mengubah data kategori menjadi numerik", "Menghapus data kosong", "Mengurutkan data", "Mencari rata-rata"],
+      options: ["Mengubah data kategori menjadi numerik", "Menghapus missing values", "Mengurutkan data alfabetis", "Menghitung nilai rata-rata"],
       correct: 0
     },
     {
       id: 97,
       question: "Normalization pada data berarti?",
-      options: ["Menskalakan nilai ke rentang tertentu", "Menghapus data error", "Mengelompokkan data", "Menambahkan label"],
-      correct: 0
+      options: ["Mengelompokkan data serupa", "Menambahkan label baru", "Menskalakan nilai ke rentang tertentu", "Menghapus data error"],
+      correct: 2
     },
     {
       id: 98,
       question: "Train-Test Split digunakan untuk?",
-      options: ["Membagi dataset agar bisa evaluasi model", "Membagi data ke banyak cluster", "Menghapus duplikat", "Mengurutkan data"],
-      correct: 0
+      options: ["Mengurutkan data by priority", "Menghapus data duplikat", "Membagi data ke cluster", "Membagi dataset agar bisa evaluasi model"],
+      correct: 3
     },
     {
       id: 99,
       question: "Precision dalam evaluasi model berarti?",
-      options: ["Proporsi prediksi positif yang benar", "Jumlah data benar dibagi total data", "Proporsi data negatif", "Error model"],
-      correct: 0
+      options: ["Error rate prediksi model", "Proporsi prediksi positif yang benar", "Jumlah data benar per total", "Proporsi semua data negatif"],
+      correct: 1
     },
     {
       id: 100,
       question: "Recall dalam evaluasi model berarti?",
-      options: ["Proporsi data positif yang berhasil diprediksi benar", "Jumlah semua prediksi benar", "Proporsi data negatif yang benar", "Error prediksi"],
-      correct: 0
+      options: ["Jumlah semua prediksi benar", "Proporsi data positif yang berhasil diprediksi benar", "Proporsi negatif yang benar", "Total error dalam prediksi"],
+      correct: 1
     }
   ];
 

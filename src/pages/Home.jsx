@@ -291,12 +291,12 @@ const Home = () => {
       options: ["Framework Machine Learning", "Bahasa Pemrograman", "Database", "Alat Visualisasi"],
       correct: 0
     },
-    {
-      id: 44,
-      question: "Keras biasanya digunakan untuk ...",
-      options: ["Deep Learning", "Big Data", "Data Cleaning", "Data Nominal"],
-      correct: 0
-    },
+   {
+  id: 44,
+  question: "Dalam deep learning, istilah 'epoch' berarti?",
+  options: ["Satu kali seluruh data melewati proses training", "Jumlah layer dalam neural network", "Jumlah neuron dalam satu layer", "Kecepatan komputasi"],
+  correct: 0
+},
     {
       id: 44,
       question: "Apa komponen utama dalam Deep Learning?",

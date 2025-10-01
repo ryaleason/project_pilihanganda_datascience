@@ -101,8 +101,13 @@ const Home = () => {
     {
       id: 16,
       question: "Perbedaan Small Data dan Big Data terletak pada?",
-      options: ["Jumlah, kompleksitas, dan kecepatan data", "Hanya nama saja", "Jenis kategori data", "Cara input data"],
-      correct: 0
+      options: [
+        "Hanya berbeda pada ukuran file penyimpanan",
+        "Jumlah data, kompleksitas, dan kecepatan pertumbuhan data",
+        "Small Data selalu lebih akurat daripada Big Data",
+        "Big Data hanya digunakan di perusahaan teknologi besar"
+      ],
+      correct: 1
     },
     {
       id: 17,
@@ -329,7 +334,7 @@ const Home = () => {
       question: "Mengapa Deep Learning membutuhkan data yang banyak?",
       options: [
         "Supaya database tidak kosong",
-        "Agar data tidak hilang",,
+        "Agar data tidak hilang", ,
         "Untuk melatih parameter model yang kompleks",
       ],
       correct: 3

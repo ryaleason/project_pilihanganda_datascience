@@ -101,15 +101,22 @@ const Home = () => {
   };
 
 
+useEffect(() => {
   if (!isStarted) {
-    
     Swal.fire({
       title: 'Selamat Datang',
       text: 'Ini Bukanlah Soal Ujian Asli Dari Dicoding, Ini Hanya Untuk Latihan',
       icon: 'info',
       showCancelButton: false,
       confirmButtonColor: '#3085d6',
-    })
+    });
+  }
+}, [isStarted]);
+
+
+
+
+  if (!isStarted) {
     return (
       <div className="min-h-screen flex-col bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center p-4">
         <div className="bg-white rounded-2xl shadow-xl p-8 max-w-md w-full text-center">
